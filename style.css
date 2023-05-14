@@ -1,0 +1,80 @@
+:root {
+    --total-brand: 14;
+    --logo-width: 12rem;
+    --total-logo-width: calc(var(--total-brand)*var(--total-logo-width));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: whitesmoke;
+    display: grid;
+    place-items: center;
+}
+
+section h1 {
+    font: 1.5rem;
+    font-weight: 600;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.slider {
+    position: relative;
+    width: 100vw;
+    height: 12rem;
+    background-color: #fff;
+    box-shadow: 0 .8rem 1.4rem -.2rem #0001;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slider::before,
+.slider::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: var(--logo-width);
+}
+
+.slider::before {
+    left: 0;
+    background: linear-gradient(to right, #fff 0%, #fff0 100%);
+}
+
+.slider::after {
+    right: 0;
+    background: linear-gradient(to left, #fff 0%, #fff0 100%);
+}
+
+.slider ul.brands {
+    list-style: none;
+    width: var(--total-logo-width);
+    display: flex;
+    animation: slideLeft 60s linear infinite;
+}
+
+.slider ul.brands:hover {
+    animation-play-state: paused;
+}
+
+@keyframes slideLeft {
+    100% {
+        transform: translate(-100%);
+    }
+}
+
+ul.brands li.brand-logo {
+    width: var(--logo-width);
+    font-size: 2rem;
+    text-align: center;
+    margin-left: 3rem;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brands Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <h1>Our Partners</h1>
+        <div class="slider">
+            <ul class="brands">
+                <li class="brand-logo"><iconify-icon icon="logos:atomic"></iconify-icon></li>
+                <li class="brand-logo"><iconify-icon icon="logos:discord"></iconify-icon></li>
+                <li class="brand-logo"><iconify-icon icon="logos:postman"></iconify-icon></li>
+                <li class="brand-logo"><iconify-icon icon="logos:mongodb"></iconify-icon></li>
+                <li class="brand-logo"><iconify-icon icon="logos:git"></iconify-icon></li>
+                <li class="brand-logo"><iconify-icon icon="logos:docker"></iconify-icon></li>
+                <li class="brand-logo"><iconify-icon icon="logos:adonisjs"></iconify-icon></li>
+                <li class="brand-logo"><iconify-icon icon="logos:reddit"></iconify-icon></li>
+                <li class="brand-logo"><iconify-icon icon="logos:heroku"></iconify-icon></li>
+                <li class="brand-logo"><iconify-icon icon="logos:cpanel"></iconify-icon></li>
+                <li class="brand-logo"><iconify-icon icon="logos:jwt"></iconify-icon></li>
+                <li class="brand-logo"><iconify-icon icon="logos:builder-io"></iconify-icon></li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        const brands = document.querySelector('ul.brands');
+        const total_brand = brands.children.length;
+
+        document.documentElement.style.setProperty('--total-brand', total_brand);
+        for(let i=0; i< total_brand; i++)
+        {
+            brands.appendChild(brands.children[i].cloneNode(true));
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+</body>
+</html>
